@@ -14,8 +14,8 @@
 </HEAD>
 <BODY>
 	<FORM id=form1 name=form1
-		action="${pageContext.request.contextPath }/customerServlet?method=addsubmit"
-		method=post>
+		action="${pageContext.request.contextPath }/customer_addCustomer.action"
+		method="post">
 		
 
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
@@ -46,64 +46,50 @@
 						</TABLE>
 						
 						<TABLE cellSpacing=0 cellPadding=5  border=0>									    
-							<TR>
-								<td>客户名称：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custName">
-								</td>
-								<td>客户级别 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custLevel">
-								</td>
-							</TR>
-							
-							<TR>
-								
-								<td>信息来源 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custSource">
-								</td>
-								<td>客户传真 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custFax">
-								</td>
-							</TR>
-							
-							<TR>																
-								<td>固定电话 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custPhone">
-								</td>
-								<td>移动电话 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custMobile">
-								</td>
-							</TR>
-							
-							<TR>
-								<td>联系地址 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custAddress">
-								</td>
-								<td>邮政编码 ：</td>
-								<td>
-								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custZip">
-								</td>
-							</TR>
-							<tr>
-								<td rowspan=2>
-								<INPUT class=button id=sButton2 type=submit
-														value=" 保存 " name=sButton2>
-								</td>
-							</tr>
+	<TR>
+		<td>客户名称：</td>
+		<td>
+		<INPUT class=textbox id=sChannel2
+								style="WIDTH: 180px" maxLength=50 name="custName">
+		</td>
+		<td>客户级别 ：</td>
+		<td>
+		<INPUT class=textbox id=sChannel2
+								style="WIDTH: 180px" maxLength=50 name="custLevel">
+		</td>
+	</TR>
+	
+	<TR>
+		
+		<td>信息来源 ：</td>
+		<td>
+		<INPUT class=textbox id=sChannel2
+								style="WIDTH: 180px" maxLength=50 name="custSource">
+		</td>
+		<td>&nbsp;</td>
+		<td>
+			&nbsp;
+		</td>
+	</TR>
+	
+	<TR>																
+		<td>固定电话 ：</td>
+		<td>
+		<INPUT class=textbox id=sChannel2
+								style="WIDTH: 180px" maxLength=50 name="custPhone">
+		</td>
+		<td>移动电话 ：</td>
+		<td>
+		<INPUT class=textbox id=sChannel2
+								style="WIDTH: 180px" maxLength=50 name="custMobile">
+		</td>
+	</TR>
+	<tr>
+		<td rowspan=2>
+		<INPUT class=button id=sButton2 type=submit
+								value=" 保存 " name=sButton2>
+		</td>
+	</tr>
 						</TABLE>
 						
 						

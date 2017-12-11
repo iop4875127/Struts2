@@ -13,4 +13,9 @@ public class CustomerService {
 		return dao.findAll();
 	}
 
+	public void addCustomer(Customer customer) {
+		CustomerDao dao = new CustomerDaoImpl();
+		dao.addCustomer(customer);
+	}
+
 }

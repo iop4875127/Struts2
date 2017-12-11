@@ -7,6 +7,13 @@
 	<package name="demo" extends="struts-default" namespace="/">
 		<action name="customer_*" class="cn.itcast.action.CustomerAction" method="{1}">
 			<result name="list">/jsp/customer/list.jsp</result>
+			<!-- 到添加页面 -->
+			<result name="toAddPage">/jsp/customer/add.jsp</result>
+			<!-- 添加之后操作 到列表页面
+				请求一次列表的action
+				type属性：chain不用缓存问题，一般使用redirectAction重定向到action
+			-->
+			<result name="addCustomer" type="redirectAction">customer_list</result>
 		</action>
 	</package>
 </struts>
