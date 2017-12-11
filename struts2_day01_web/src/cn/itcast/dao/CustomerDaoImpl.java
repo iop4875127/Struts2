@@ -31,7 +31,7 @@ public class CustomerDaoImpl implements CustomerDao {
 			Criteria criteria = session.createCriteria(Customer.class);
 //			criteria.add(Restrictions.eq(propertyName, value))
 			List<Customer> list = criteria.list();
-			
+
 			//提交事务
 			tx.commit();
 			return list;

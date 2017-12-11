@@ -1,6 +1,7 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -88,7 +89,7 @@
 													<TD>手机</TD>
 													<TD>操作</TD>
 												</TR>
-			<c:forEach items="${list }" var="customer">
+		<%-- 	<c:forEach items="${list }" var="customer">
 			<TR
 				style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
 				<TD>${customer.custName }</TD>
@@ -101,7 +102,33 @@
 				</TD>
 			</TR>
 			
-			</c:forEach>
+			</c:forEach> --%>
+			
+	<!-- 使用struts2标签+ognl实现 -->
+	<s:iterator value="list" var="customer">
+	<TR
+		style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
+		<TD>
+			<s:property value="#customer.custName"/>
+		</TD>
+		<TD>
+			<s:property value="#customer.custLevel"/>
+		</TD>
+		<TD>
+			<s:property value="#customer.custSource"/>
+		</TD>
+		<TD>
+			<s:property value="#customer.custPhone"/>
+		</TD>
+		<TD>
+			<s:property value="#customer.custMobile"/>
+		</TD>
+		<TD>
+		
+		</TD>
+	</TR>
+	</s:iterator>
+			
 
 											</TBODY>
 										</TABLE>

@@ -5,7 +5,25 @@
 <struts>
 
 	<package name="demo" extends="struts-default" namespace="/">
+		<!-- 1 声明拦截器 -->
+		<interceptors>
+			<interceptor name="loginintercept" class="cn.itcast.interceptor.LoginInterceptor"></interceptor>
+		</interceptors>
+		
 		<action name="customer_*" class="cn.itcast.action.CustomerAction" method="{1}">
+		
+			<!-- 2 使用自定义拦截器 -->
+			<interceptor-ref name="loginintercept">
+				<!-- 配置action里面某些方法不进行拦截
+					name属性值： excludeMethods
+					值：action不拦截的方法名称
+				 -->
+				<param name="excludeMethods">login</param>
+			</interceptor-ref>
+			
+			<!-- 3 把默认拦截器手动使用一次 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
 			<result name="list">/jsp/customer/list.jsp</result>
 			<!-- 到添加页面 -->
 			<result name="toAddPage">/jsp/customer/add.jsp</result>
@@ -14,6 +32,9 @@
 				type属性：chain不用缓存问题，一般使用redirectAction重定向到action
 			-->
 			<result name="addCustomer" type="redirectAction">customer_list</result>
+			<!-- 登录操作 -->
+			<result name="loginsuccess">/index.htm</result>
+			<result name="login">/login.jsp</result>
 		</action>
 	</package>
 </struts>
